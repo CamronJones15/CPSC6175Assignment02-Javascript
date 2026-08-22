@@ -24,8 +24,7 @@
  */
 export function createUserConfig() {
     // TODO: Create the USER_CONFIG constant here
-    // const USER_CONFIG = { ... };
-    
+    const USER_CONFIG = { maxLoginAttempts: 3, sessionTimeout: 1800, theme: 'dark'};
     return USER_CONFIG;
 }
 
@@ -43,17 +42,17 @@ export function createUserConfig() {
  */
 export function countActiveUsers(users) {
     // TODO: Declare userCount with let (it will change)
-    // let userCount = ?;
+    let userCount =0;
     
     // TODO: Loop through users and count active ones
-    // for (const user of users) {
-    //     if (user.isActive) {
-    //         userCount++;
-    //     }
-    // }
+    for (const user of users) {
+         if (user.isActive) {
+             userCount++;
+         }
+     }
     
     // TODO: Return the count
-    // return userCount;
+     return userCount;
 }
 
 /**
@@ -73,15 +72,15 @@ export function countActiveUsers(users) {
 export function categorizeByAge(age) {
     if (age >= 18) {
         // TODO: Create a const variable called category with value "adult"
-        // const category = "adult";
+        const category = "adult";
         return category;
     } else if (age >= 13) {
         // TODO: Create a const variable called category with value "teen"
-        // const category = "teen";
+         const category = "teen";
         return category;
     } else {
         // TODO: Create a const variable called category with value "child"
-        // const category = "child";
+         const category = "child";
         return category;
     }
     
@@ -100,15 +99,15 @@ export function categorizeByAge(age) {
  */
 export function calculateSum(numbers) {
     // TODO: Initialize count with let (it will change)
-    // let count = 0;
+     let count = 0;
     
     // TODO: Loop through numbers and add each to count
-    // for (const num of numbers) {
-    //     count += num;
-    // }
+     for (const num of numbers) {
+         count += num;
+     }
     
     // TODO: Return the final count
-    // return count;
+     return count;
 }
 
 /**
