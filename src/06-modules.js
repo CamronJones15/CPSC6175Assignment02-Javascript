@@ -23,9 +23,9 @@
  * Export it using named export syntax.
  */
 // TODO: Create the capitalize function and export it
-export const capitalize = (str) => {
-     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-};
+// export const capitalize = (str) => {
+//     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+// };
 
 /**
  * TODO 2: Create a function that works with arrays
@@ -39,9 +39,9 @@ export const capitalize = (str) => {
  * Export it using named export.
  */
 // TODO: Create and export the getLastItem function
- export const getLastItem = (array) => {
-     return array.length > 0 ? array[array.length - 1] : null;
- };
+// export const getLastItem = (array) => {
+//     return array.length > 0 ? array[array.length - 1] : null;
+// };
 
 /**
  * TODO 3: Create a math utility function
@@ -55,11 +55,11 @@ export const capitalize = (str) => {
  * Export it using named export.
  */
 // TODO: Create and export the average function
- export const average = (numbers) => {
-     if (numbers.length === 0) return 0;
-     const sum = numbers.reduce((total, num) => total + num, 0);
-     return sum / numbers.length;
- };
+// export const average = (numbers) => {
+//     if (numbers.length === 0) return 0;
+//     const sum = numbers.reduce((total, num) => total + num, 0);
+//     return sum / numbers.length;
+// };
 
 /**
  * TODO 4: Create a validation function
@@ -74,9 +74,9 @@ export const capitalize = (str) => {
  * Export it using named export.
  */
 // TODO: Create and export the isValidPassword function
- export const isValidPassword = (password) => {
-     return password.length >= 8 && /\d/.test(password);
- };
+// export const isValidPassword = (password) => {
+//     return password.length >= 8 && /\d/.test(password);
+// };
 
 /**
  * TODO 5: Create a formatter function
@@ -92,9 +92,9 @@ export const capitalize = (str) => {
  * Export it using named export.
  */
 // TODO: Create and export the formatCurrency function
- export const formatCurrency = (amount) => {
-     return `$${amount.toFixed(2)}`;
- };
+// export const formatCurrency = (amount) => {
+//     return `$${amount.toFixed(2)}`;
+// };
 
 /**
  * TODO 6: Export multiple functions at once
