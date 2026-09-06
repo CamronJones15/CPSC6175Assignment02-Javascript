@@ -55,14 +55,11 @@ function saveData(data) {
  * Error: pass through the original error
  */
 export function getUserInfo(userId) {
-    // TODO: Use fetchUser(userId) and handle the result
-    // return fetchUser(userId)
-    //     .then(user => {
-    //         return `Found user: ${user.name}`;
-    //     })
-    //     .catch(error => {
-    //         throw error; // Re-throw the error
-    //     });
+    return fetchUser(userId)
+        .then(user => `Found user: ${user.name}`)
+        .catch(error => {
+            throw error; // Let the error bubble up
+        });
 }
 
 /**
@@ -77,15 +74,15 @@ export function getUserInfo(userId) {
  * If any step fails, let the error bubble up.
  */
 export function fetchAndSaveUser(userId) {
-    // TODO: Chain fetchUser and saveData
-    // return fetchUser(userId)
-    //     .then(user => {
-    //         return saveData(user);
-    //     })
-    //     .then(result => {
-    //         return `User saved successfully`;
-    //     });
-    
+    let userName; // Variable to store the user's name for the final message
+    return fetchUser(userId)
+        .then(user => {
+            userName = user.name; // Store the user's name
+            return saveData(user); // Save the user data
+        })
+        .then(result => {
+            return `User ${userName} saved successfully`; // Use the stored name in the message
+        });
     // Note: You'll need to modify this to include the user's name in the message
     // Hint: You might need to store the user data from the first .then()
 }
@@ -100,14 +97,9 @@ export function fetchAndSaveUser(userId) {
  * Error: "Sorry, we couldn't find that user."
  */
 export function getWelcomeMessage(userId) {
-    // TODO: Fetch user and handle errors gracefully
-    // return fetchUser(userId)
-    //     .then(user => {
-    //         return `Welcome, ${user.name}!`;
-    //     })
-    //     .catch(error => {
-    //         return "Sorry, we couldn't find that user.";
-    //     });
+    return fetchUser(userId)
+        .then(user => `Welcome, ${user.name}!`)
+        .catch(error => "Sorry, we couldn't find that user.");
 }
 
 /**
@@ -122,12 +114,8 @@ export function getWelcomeMessage(userId) {
  * Output: "Alice (25 years old)"
  */
 export function formatUserData(userData) {
-    // TODO: Use Promise.resolve() to create a resolved promise
-    // Then format the data in a .then() block
-    // return Promise.resolve(userData)
-    //     .then(user => {
-    //         return `${user.name} (${user.age} years old)`;
-    //     });
+    return Promise.resolve(userData)
+        .then(user => `${user.name} (${user.age} years old)`);
 }
 
 /**
@@ -140,11 +128,11 @@ export function formatUserData(userData) {
  * If fetchUser fails: return { id: 0, name: 'Guest', email: 'guest@example.com' }
  */
 export function getUserOrDefault(userId) {
-    // TODO: Fetch user, but provide fallback on error
-    // return fetchUser(userId)
-    //     .catch(error => {
-    //         return { id: 0, name: 'Guest', email: 'guest@example.com' };
-    //     });
+    return fetchUser(userId)
+        .catch(error => {
+            // Return default user data if fetch fails
+            return { id: 0, name: 'Guest', email: 'guest@example.com' };
+        });
 }
 
 /**
@@ -159,21 +147,17 @@ export function getUserOrDefault(userId) {
  * Chain all operations and return: "Profile summary saved for [user name]"
  */
 export function createAndSaveUserSummary(userId) {
-    // TODO: Chain multiple operations
-    // 1. Fetch the user
-    // 2. Create summary data: { name: user.name, summary: `Profile for ${user.name}` }
-    // 3. Save the summary data
-    // 4. Return success message
-    
-    // return fetchUser(userId)
-    //     .then(user => {
-    //         const summary = { name: user.name, summary: `Profile for ${user.name}` };
-    //         return saveData(summary);
-    //     })
-    //     .then(result => {
-    //         return "Profile summary saved";
-    //     });
-    
+    let userName; // Variable to store the user's name for the final message
+    return fetchUser(userId)
+        .then(user => {
+            userName = user.name; // Store the user's name
+            const summary = { name: user.name, summary: `Profile for ${user.name}` };
+            return saveData(summary);
+        })
+        .then(result => {
+            return `Profile summary saved for ${userName}`;
+        });
+
     // Note: You'll need to access the user name in the final message
     // Hint: Store user data in a variable outside the chain, or restructure the chain
 }

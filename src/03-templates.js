@@ -24,8 +24,7 @@
  * New way: return `Welcome back, ${name}!`;
  */
 export function welcomeUser(name) {
-    // TODO: Use template literals to create the welcome message
-    // return `Welcome back, ${name}!`;
+    return `Welcome back, ${name}!`; // TODO: Use template literals to return the welcome message
 }
 
 /**
@@ -37,8 +36,7 @@ export function welcomeUser(name) {
  * Return format: "John (25 years old) from New York"
  */
 export function formatUserInfo(user) {
-    // TODO: Use template literals to format the user info
-    // return `${user.name} (${user.age} years old) from ${user.city}`;
+    return `${user.name} (${user.age} years old) from ${user.city}`; // TODO: Use template literals to format user info
 }
 
 /**
@@ -51,10 +49,9 @@ export function formatUserInfo(user) {
  * Note: Use Math.round(total * 100) / 100 to round to 2 decimal places
  */
 export function formatCartTotal(quantity, price) {
-    // TODO: Calculate total and use template literals to format
-    // const total = quantity * price;
-    // const roundedTotal = Math.round(total * 100) / 100;
-    // return `${quantity} items × $${price} = $${roundedTotal}`;
+   const total = quantity * price;
+   const roundedTotal = Math.round(total * 100) / 100;
+   return `${quantity} items × $${price} = $${roundedTotal}`;
 }
 
 /**
@@ -73,12 +70,11 @@ export function formatCartTotal(quantity, price) {
  * </div>
  */
 export function createProductCard(product) {
-    // TODO: Create multi-line HTML using template literals
-    // return `<div class="product-card">
-    //   <h3>${product.name}</h3>
-    //   <p>$${product.price}</p>
-    //   <p>${product.description}</p>
-    // </div>`;
+    return '<div class="product-card">\n' +
+           `  <h3>${product.name}</h3>\n` +
+           `  <p>$${product.price}</p>\n` +
+           `  <p>${product.description}</p>\n` +
+           '</div>';
 }
 
 /**
@@ -94,8 +90,7 @@ export function createProductCard(product) {
  * Hint: Use the ternary operator: condition ? "if true" : "if false"
  */
 export function formatTask(task) {
-    // TODO: Use template literals with conditional content
-    // return `${task.title}${task.dueDate ? ` (Due: ${task.dueDate})` : ''}`;
+    return `${task.name}${task.dueDate ? ` (Due: ${task.dueDate})` : ''}`;
 }
 
 /**
@@ -115,14 +110,11 @@ export function formatTask(task) {
  * The Team"
  */
 export function generatePasswordResetEmail(user, resetLink) {
-    // TODO: Create multi-line email template
-    // return `Hi ${user.name},
-    // 
-    // Click the link below to reset your password:
-    // ${resetLink}
-    // 
-    // Best regards,
-    // The Team`;
+    return `Hi ${user.name},\n\n` +
+           `Click the link below to reset your password:\n` +
+           `${resetLink}\n\n` +
+           `Best regards,\n` +
+           `The Team`;
 }
 
 /**
