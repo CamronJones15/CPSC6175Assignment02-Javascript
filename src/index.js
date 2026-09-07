@@ -97,4 +97,4 @@ try {
 }
 
 console.log('\n✅ Demo complete! Run "npm test" to check your implementations.');
-console.log('💡 Tip: Complete each TODO in the source files to see more functionality!');
+console.log('💡 Tip: Complete each TODO in the source files to see more functionality');
