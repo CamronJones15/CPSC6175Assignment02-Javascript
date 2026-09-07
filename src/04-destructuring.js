@@ -43,7 +43,7 @@ export function extractUserInfo(user) {
  */
 export function getUserRole(user) {
     const { name, role = 'guest' } = user;
-    return `${name} has the role of ${role}`;
+    return `${name} is a ${role}`;
 }
 
 /**
@@ -58,7 +58,7 @@ export function getUserRole(user) {
  */
 export function extractUserCity(user) {
     const { address: { city } } = user;
-    return `${user.name} lives in ${city}`;
+    return `User lives in ${city}`;
 }
 
 /**
@@ -71,7 +71,7 @@ export function extractUserCity(user) {
  */
 export function getFirstTwoItems(items) {
     const [first, second] = items;
-    return `The first item is ${first} and the second item is ${second}`;
+    return `First: ${first}, Second: ${second}`;
 }
 
 /**
@@ -84,7 +84,7 @@ export function getFirstTwoItems(items) {
  */
 export function separateFirstFromRest(numbers) {
     const [first, ...rest] = numbers;
-    return `First: ${first}, Rest: ${rest.join(', ')}`;
+    return { first, rest };
 }
 
 /**
@@ -97,7 +97,7 @@ export function separateFirstFromRest(numbers) {
  * Use: function formatProduct({ name, price }) { ... }
  */
 export function formatProduct({ name, price, inStock = true }) {
-    return `${name} costs $${price}. In stock: ${inStock}`;
+    return `${name} - $${price} (${inStock ? 'In Stock' : 'Out of Stock'})`;
 }
 
 /**

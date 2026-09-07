@@ -90,7 +90,7 @@ export function createProductCard(product) {
  * Hint: Use the ternary operator: condition ? "if true" : "if false"
  */
 export function formatTask(task) {
-    return `${task.name}${task.dueDate ? ` (Due: ${task.dueDate})` : ''}`;
+    return `${task.title}${task.dueDate ? ` (Due: ${task.dueDate})` : ''}`;
 }
 
 /**
